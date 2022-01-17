@@ -41,7 +41,6 @@ output "outputpublicsubnet2" {
   
 }
 
-
 resource "aws_subnet" "privatesubnet3" {
   vpc_id     = aws_vpc.neo_vpc.id
   cidr_block = var.private_subnet_3
@@ -56,7 +55,6 @@ output "outputprivatesubnet3" {
     value = aws_subnet.privatesubnet3.id
   
 }
-
 
 resource "aws_subnet" "privatesubnet4" {
   vpc_id     = aws_vpc.neo_vpc.id
@@ -74,8 +72,6 @@ output "outputprivatesubnet4" {
 }
 
 # RDS Instance Subnet Group
-
-
 resource "aws_db_subnet_group" "rdsubnetgroup" {
   name       = "rds_subnet_group"
   subnet_ids = [aws_subnet.privatesubnet3.id, aws_subnet.privatesubnet4.id]
@@ -84,7 +80,6 @@ resource "aws_db_subnet_group" "rdsubnetgroup" {
       Name = "My Subnet Group"
   }
 }
-
 output "out_rdssubnetgroup" {
 
   value = aws_db_subnet_group.rdsubnetgroup.id

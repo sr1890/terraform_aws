@@ -81,7 +81,7 @@ resource "aws_security_group" "external_alb_sg" {
     Name = "External Load Balancer Security Group"
   }
 
-  vpc_id = aws_vpc.neo_vpc.id #module.site.output_vpc_id  
+  vpc_id = aws_vpc.neo_vpc.id
 
 }
 

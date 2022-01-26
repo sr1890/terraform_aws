@@ -3,7 +3,7 @@ resource "aws_lb" "albweb" {
   load_balancer_type         = "application"
   security_groups            = [var.external_alb_sg]
   subnets                    = [var.public_subnet1, var.public_subnet2]
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Environment = "External Application Load Balancer"

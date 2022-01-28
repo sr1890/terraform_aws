@@ -1,13 +1,14 @@
 ﻿# terraform_aws
- ```
+
  3 Tier Arch
- 
- Create VPC 
+ ```
+Create VPC 
 	neo_vpc
 	
 Create IG
 	aws_internet_gateway
-
+```
+```
 Create Subnets
 		aws_subnet
 			publicsubnet1
@@ -28,7 +29,7 @@ Create Route Table:
 Create the NAT Gateway
 	aws_eip
 	aws_nat_gateway
-	
+```	
 Create Security Grouo
 	bastion_ssh_all_sg_neo
 	bastion_ssh_from_nat

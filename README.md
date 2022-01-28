@@ -1,8 +1,4 @@
-![3 Tier Arch] arch_proposed.jpeg
-
  # terraform_aws
-
-
  ```
 Create VPC 
 	neo_vpc

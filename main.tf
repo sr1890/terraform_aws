@@ -50,4 +50,12 @@ module "asg" {
   out_tg_instances  = module.elb.out_tg_instances
   internaltg        = module.elb.internaltg
 }
+module "db" {
+  source             = "./db"
+  private_subnet3    = module.vpc.outputprivatesubnet3
+  private_subnet4    = module.vpc.outputprivatesubnet4
+  out_rdssubnetgroup = module.vpc.out_rdssubnetgroup
+  rdsmysqlsg         = module.vpc.rdsmysqlsg
+
+}
 

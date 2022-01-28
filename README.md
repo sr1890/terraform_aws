@@ -1,4 +1,4 @@
-./arch_proposed.jpeg
+! ./arch_proposed.jpeg
 
  # terraform_aws
 

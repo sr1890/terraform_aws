@@ -29,3 +29,25 @@ module "elb" {
   internal_alb_sg = module.vpc.output_internal_alb_sg
 }
 
+module "config" {
+  source                 = "./config"
+  output_web_sg          = module.vpc.output_web_sg
+  external_alb_sg        = module.vpc.output_external_alb_sg
+  output_bastion_ssh     = module.vpc.output_bastion_ssh
+  output_internal_alb_sg = module.vpc.output_internal_alb_sg
+
+}
+
+
+module "asg" {
+  source            = "./asg"
+  web_launch_config = module.config.web_lc_name
+  app_launch_config = module.config.app_lc_name
+  public_subnet1    = module.vpc.outputpublicsubnet1
+  public_subnet2    = module.vpc.outputpublicsubnet2
+  private_subnet3   = module.vpc.outputprivatesubnet3
+  private_subnet4   = module.vpc.outputprivatesubnet4
+  out_tg_instances  = module.elb.out_tg_instances
+  internaltg        = module.elb.internaltg
+}
+

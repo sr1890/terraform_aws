@@ -29,7 +29,9 @@ Create Route Table:
 Create the NAT Gateway
 	aws_eip
 	aws_nat_gateway
-```	
+```
+
+```
 Create Security Grouo
 	bastion_ssh_all_sg_neo
 	bastion_ssh_from_nat
